@@ -2820,7 +2820,7 @@ static int iwpriv_get_assoc_list(struct net_device *dev,
 	p_iwrq->data.length = strlen(mac_lst);
 #else
 	for (i = 0; i < 8; i++) { 
-		struct ether_addr * id = &sta_maclist->ea[i];
+		struct ether_addr * id = sta_maclist[i].ea;
 		if (!ETHER_ISNULLADDR(id->octet)) {
 			scb_val_t scb_val;
 			int rssi = 0;
